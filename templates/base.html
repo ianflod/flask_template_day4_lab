@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>{{ title }} - CodeClan Calamity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style_base.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Skranji&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="grid-container">
+        <header id="header">
+            <h1>CodeClan Calamity Events Co.</h1>
+
+            <nav>
+                <ul>
+                    <li id="navigation"><a href="/events">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr id="body">
+        {% block content%}
+
+        {% endblock %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style_index.css')}}">
+</head>
+<h2>All Events</h2>
+<div>
+    <h3>Add New Event</h3>
+    <form action="/events" method="post">
+        <label for="title">Event Name</label>
+        <input type="text" name="title" id="title">
+        <label for="date">Date</label>
+        <input type="text" name="date" id="date">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="2"></textarea>
+        <label for="guests">Guests</label>
+        <input type="int" name="guests" id="guests">
+        <input type="submit" value="Add Event">
+    </form>
+
+</div>
+
+{% for event in events %}
+<div id="events">
+    <ul>
+        <li>
+            <p>{{event.event_name}} </p>
+            <p>{{event.event_date}}</p>
+            <p>Location: {{event.room_location}}</p>
+            <p>Description: {{event.description}}</p>
+            <p>Guests attending: {{event.number_of_guests}}</p>
+        </li>
+
+    </ul>
+</div>
+{% endfor %}
+
+
+{% endblock %}
